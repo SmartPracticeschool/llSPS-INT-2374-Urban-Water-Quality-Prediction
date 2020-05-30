@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+   <title>Water Quality Analysis</title>
+   <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+ <div class="reg">
+	<h1>Predicting Water Quality</h1>
+	</div>
+ <div class="abc">
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+	
+		<h2 class="name">Enter Temperature</h2>
+		<input class="temp" type="text" name="temperature" placeholder="Temp" required="required" />
+		
+		<h2 class="name">Enter D.O.</h2>
+		<input class="DO" type="text" name="D.O." placeholder="D.O." required="required" />
+		
+		<h2 class="name">Enter Conductivity</h2>
+		<input class="Cond" type="text" name="conductivity" placeholder="Conductivity" required="required" />
+		
+		<h2 class="name">Enter B.O.D</h2>
+		<input class="BOD" type="text" name="B.O.D" placeholder="B.O.D" required="required" />
+		
+		<h2 class="name">Enter Nitratenan+Nitrit</h2>
+		<input class="Ni" type="text" name="Ni" placeholder="Ni" required="required" />
+		
+		<h2 class="name">Enter Fecal Coliform</h2>
+		<input class="Fc" type="text" name="FC" placeholder="FC" required="required" />
+		
+		<h2 class="name">Enter Tot. Coliform</h2>
+		<input class="TC" type="text" name="TC" placeholder="TC" required="required" />
+		
+		<h2 class="name">Enter Year</h2>
+		<input class="year" type="text" name="year" placeholder="year" required="required" />
+	
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br><pre>
+	<div class="pred">		{{ prediction_text }}       </div>
+</pre>
+ </div>
+
+</body>
+</html>
