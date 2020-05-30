@@ -20,7 +20,7 @@ def predict():
 
     output = round(prediction[0], 2)
     if 6.6<output<7.4:
-        return render_template('index.html', prediction_text='Water is Portable with PH value : {}'.format(output))
+        return render_template('index.html', prediction_text='Water is Potable with PH value : {}'.format(output))
     else:
         return render_template('index.html', prediction_text='Contaminated Water with PH value : {}'.format(output))
 

@@ -45,7 +45,7 @@ model = pickle.load(open('model.pkl','rb'))
 
 a=model.predict([[27.2,5.6,200.0,1.5,0.1,3000.1,5000.5,2014]])
 if 6.6<a<7.4:
-    print("Water is Portable with PH value :",a)
+    print("Water is Potable with PH value :",a)
 else:
     print("Contaminated water with PH value :",a)
 
