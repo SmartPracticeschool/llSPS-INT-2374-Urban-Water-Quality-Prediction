@@ -25,7 +25,7 @@ data['Temp'] = pd.to_numeric(data['Temp'],errors='coerce')
 data['Temp'].fillna(30,inplace=True)
 
 
-X=data.iloc[:,3:11].values
+X=data.iloc[:,3:10].values
 Y=data.iloc[:,-1].values
 
 #Splitting Training and Test Set
@@ -43,7 +43,7 @@ pickle.dump(rig, open('model.pkl','wb'))
 # Loading model to compare the results
 model = pickle.load(open('model.pkl','rb'))
 
-a=model.predict([[27.2,5.6,200.0,1.5,0.1,3000.1,5000.5,2014]])
+a=model.predict([[27.2,5.6,200.0,1.5,0.1,3000.1,5000.5]])
 if 6.6<a<7.4:
     print("Water is Potable with PH value :",a)
 else:
